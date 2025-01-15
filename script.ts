@@ -26,7 +26,7 @@ async function fetchCountryData(countryName: string): Promise<void> {
         // now time to extract the data we need, yay
         const countryData = `
           <h3 class="text-xl font-semibold capitalize">${country.name.common}</h3>
-          <img src="${country.flags.svg}" alt="flag of ${country.name.common}" class="w-[100px] h-[80px] rounded-md" />
+          <img src="${country.flags.svg}" alt="flag of ${country.name.common}" class="w-[100px] h-[60px] rounded-md" />
           <p class="text-lg capitalize"><span class="font-medium">capital:</span> ${country.capital}</p>
           <p class="text-lg capitalize"><span class="font-medium">population:</span> ${country.population.toLocaleString()}</p>
         `

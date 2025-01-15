@@ -49,6 +49,8 @@ function fetchCountryData(countryName) {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 3, , 4]);
+                    // the result container be loading while we fetch the country details
+                    searchResult.innerHTML = "Loading..."; //i can make this fancy later lol
                     return [4 /*yield*/, fetch("".concat(API_URL).concat(countryName))];
                 case 1:
                     response = _a.sent();
@@ -59,7 +61,7 @@ function fetchCountryData(countryName) {
                 case 2:
                     data = _a.sent();
                     country = data[0];
-                    countryData = "\n          <h3 class=\"text-xl font-semibold capitalize\">".concat(country.name.common, "</h3>\n          <img src=\"").concat(country.flags.svg, "\" alt=\"flag of ").concat(country.name.common, "\" class=\"w-[100px] h-[80px] rounded-md\" />\n          <p class=\"text-lg capitalize\"><span class=\"font-medium\">capital:</span> ").concat(country.capital, "</p>\n          <p class=\"text-lg capitalize\"><span class=\"font-medium\">population:</span> ").concat(country.population.toLocaleString(), "</p>\n        ");
+                    countryData = "\n          <h3 class=\"text-xl font-semibold capitalize\">".concat(country.name.common, "</h3>\n          <img src=\"").concat(country.flags.svg, "\" alt=\"flag of ").concat(country.name.common, "\" class=\"w-[100px] h-[60px] rounded-md\" />\n          <p class=\"text-lg capitalize\"><span class=\"font-medium\">capital:</span> ").concat(country.capital, "</p>\n          <p class=\"text-lg capitalize\"><span class=\"font-medium\">population:</span> ").concat(country.population.toLocaleString(), "</p>\n        ");
                     searchResult.innerHTML = countryData;
                     return [3 /*break*/, 4];
                 case 3:
