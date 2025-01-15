@@ -49,8 +49,6 @@ function fetchCountryData(countryName) {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 3, , 4]);
-                    // the result container be loading while we fetch the country details
-                    searchResult.innerHTML = "Loading..."; //i can make this fancy later lol
                     return [4 /*yield*/, fetch("".concat(API_URL).concat(countryName))];
                 case 1:
                     response = _a.sent();
@@ -61,12 +59,12 @@ function fetchCountryData(countryName) {
                 case 2:
                     data = _a.sent();
                     country = data[0];
-                    countryData = "\n          <h3>".concat(country.name.common, "</h3>\n          <img src=\"").concat(country.flags.svg, "\" alt=\"flag of ").concat(country.name.common, "\" class=\"w-[100px] h-[80px] rounded-md\" />\n          <p>").concat(country.capital, "</p>\n          <p>").concat(country.population.toLocaleString(), "</p>\n        ");
+                    countryData = "\n          <h3 class=\"text-xl font-semibold capitalize\">".concat(country.name.common, "</h3>\n          <img src=\"").concat(country.flags.svg, "\" alt=\"flag of ").concat(country.name.common, "\" class=\"w-[100px] h-[80px] rounded-md\" />\n          <p class=\"text-lg capitalize\"><span class=\"font-medium\">capital:</span> ").concat(country.capital, "</p>\n          <p class=\"text-lg capitalize\"><span class=\"font-medium\">population:</span> ").concat(country.population.toLocaleString(), "</p>\n        ");
                     searchResult.innerHTML = countryData;
                     return [3 /*break*/, 4];
                 case 3:
                     error_1 = _a.sent();
-                    searchResult.innerHTML = "<p class='text-red-500'>error: country not found</p>";
+                    searchResult.innerHTML = "<p style=\"color: red\">country not found</p>";
                     return [3 /*break*/, 4];
                 case 4: return [2 /*return*/];
             }
@@ -82,54 +80,3 @@ form.addEventListener("click", function (e) {
     }
     fetchCountryData(countryName);
 });
-// export {}
-// Define types for the country data
-// interface Country {
-//     name: {
-//         common: string;
-//     };
-//     flags: {
-//         svg: string;
-//     };
-//     capital: string[];
-//     population: number;
-// }
-// // Target all necessary elements with type annotations
-// const countryInput = document.getElementById("countryName") as HTMLInputElement;
-// const searchResult = document.getElementById("searchResult") as HTMLDivElement;
-// const form = document.querySelector("form") as HTMLFormElement;
-// // API Endpoint URL
-// const API_URL = "https://restcountries.com/v3.1/name/";
-// // Function to fetch country data
-// async function fetchCountryData(countryName: string): Promise<void> {
-//     try {
-//         // Show loading state while fetching country details
-//         searchResult.innerHTML = "Loading...";
-//         const response = await fetch(`${API_URL}${countryName}`);
-//         if (!response.ok) {
-//             throw new Error("Country not found");
-//         }
-//         const data: Country[] = await response.json();
-//         const country = data[0];
-//         // Extract and display the required data
-//         const countryData = `
-//           <h3 class="text-xl font-bold">${country.name.common}</h3>
-//           <img src="${country.flags.svg}" alt="Flag of ${country.name.common}" class="w-[100px] h-[80px] rounded-md" />
-//           <p class="mt-2">Capital: ${country.capital.join(", ")}</p>
-//           <p>Population: ${country.population.toLocaleString()}</p>
-//         `;
-//         searchResult.innerHTML = countryData;
-//     } catch (error) {
-//         searchResult.innerHTML = `<p class="text-red-500">Error: ${(error as Error).message}</p>`;
-//     }
-// }
-// // Add event listener to the form
-// form.addEventListener("submit", (event: SubmitEvent) => {
-//     event.preventDefault(); // Prevent default form submission behavior
-//     const countryName = countryInput.value.trim();
-//     if (countryName === "") {
-//         searchResult.innerHTML = `<p class="text-red-500">Please enter a country name</p>`;
-//         return;
-//     }
-//     fetchCountryData(countryName);
-// });
