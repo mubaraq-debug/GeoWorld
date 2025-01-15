@@ -18,15 +18,16 @@
             placeholder="enter country's name"
             class="outline-none px-5 py-2 w-[80%] placeholder:text-base placeholder:capitalize rounded-sm"
             style="border: 1px solid #282121"
+            id="countryName"
           />
-        <button type="submit" class="bg-[#282121] w-[80%] px-5 py-2 text-white capitalize text-base rounded-sm">search</button>
+        <button type="submit" id="submitButton" class="bg-[#282121] w-[80%] px-5 py-2 text-white capitalize text-base rounded-sm">search</button>
       </form>
 
-      <div class="displayContainer pt-10">
-
+      <div class="displayContainer pt-10" id="searchResult">
       </div>
     </main>
 
-    <script src="/script.js"></script>
+
+    <script src="/script.js" type="module"></script>
   </body>
 </html>

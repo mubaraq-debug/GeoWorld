@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",          // Specify ECMAScript target version
+    "lib": ["ES2015", "DOM"],   // Include required libraries
+    "strict": true,
+    "esModuleInterop": true     // Optional for better module support
+  }
+}
