@@ -3,16 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Country Search</title>
   </head>
-  <body style="background-image: url('./assets/bg3.jpg'); background-size: cover; background-repeat: no-repeat;" class="h-screen">
-    <header class="text-5xl text-center pt-20 pb-5 text-white font-bold">GeoWorld</header>
+  <body>
+    <header class="text-3xl md:text-5xl text-center pt-20 pb-5 text-white font-bold">GeoWorld</header>
     <main
-      class="mx-auto max-w-[1200px] flex flex-col items-center justify-center"
+      class="flex flex-col items-center justify-center"
     >
       <form
-        class="flex flex-col items-center gap-5 rounded-2xl shadow-xl py-[50px] px-[30px] w-[450px] border border-1"
+        class="flex flex-col items-center gap-5 rounded-2xl shadow-xl py-[50px] px-[30px] w-[90%] md:w-[450px] border border-1"
       >
           <input
             type="text"
@@ -24,7 +25,7 @@
         <button type="submit" id="submitButton" class="bg-[#282121] w-[80%] px-5 py-2 text-white capitalize text-base rounded-sm">search</button>
       </form>
 
-      <div class="displayContainer pt-10 flex flex-col items-start justify-center gap-2 text-white bg-black opacity-[0.7] px-20 py-10 mt-9 mb-20 rounded-lg" id="searchResult">
+      <div class="displayContainer pt-10 flex flex-col w-[90%] md:w-[450px] items-start justify-center gap-2 text-white bg-black opacity-[0.7] px-20 py-10 mt-9 mb-20 rounded-lg" id="searchResult">
       </div>
     </main>
 
